@@ -2,8 +2,7 @@
 Thumbs.db
 .DS_Store
 
-# Media files (too large for git)
-视觉作品/*.mp4
-快捷AI/*.mp4
-瞬贴展示/*.mp4
-webToolsAI/*.mp4
+# Temp scripts
+cleanup_cos.py
+update_paths.py
+deploy_cos.py
