@@ -3,7 +3,7 @@ Thumbs.db
 .DS_Store
 
 # Media files (too large for git)
-视觉作品/
-快捷AI/
-瞬贴展示/
-webToolsAI/
+视觉作品/*.mp4
+快捷AI/*.mp4
+瞬贴展示/*.mp4
+webToolsAI/*.mp4
