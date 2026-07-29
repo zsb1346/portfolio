@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>瞬贴 - 个人作品展示</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">作品集</a>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">首页</a>
+                <a href="webtoolsai.html" class="nav-link">WebTools AI</a>
+                <a href="shunqie.html" class="nav-link active">瞬贴</a>
+                <a href="kuaijie-ai.html" class="nav-link">快捷AI</a>
+            </div>
+            <div class="nav-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="project-hero">
+            <div class="project-hero-content">
+                <div class="project-badge">效率工具</div>
+                <h1 class="project-title">瞬贴</h1>
+                <p class="project-subtitle">复制粘贴的终极进化</p>
+                <p class="project-description">
+                    每天都在复制粘贴？瞬贴让你的剪贴板变聪明。
+                    输入几个字就能找到之前复制过的内容，设置触发词自动替换常用文本，
+                    再也不用翻聊天记录找那个链接了。
+                </p>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <div class="features-container">
+                <div class="feature-content">
+                    <h2>它能做什么</h2>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">/</div>
+                            <div class="feature-text">
+                                <h3>秒搜历史记录</h3>
+                                <p>复制过的东西太多找不到？按快捷键唤出搜索框，输入几个字就能找到，支持拼音搜索。</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">/</div>
+                            <div class="feature-text">
+                                <h3>触发词自动替换</h3>
+                                <p>设置".addr"自动变成你的地址，".em"变成邮箱。输入触发词，自动替换，告别重复打字。</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">/</div>
+                            <div class="feature-text">
+                                <h3>图片也能复制</h3>
+                                <p>不止复制文字，图片、文件也能管理。截图后自动保存，随时调用。</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">/</div>
+                            <div class="feature-text">
+                                <h3>界面随你定</h3>
+                                <p>9种主题颜色随便换，字体大小、圆角样式都能调，用着舒服最重要。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-video">
+                    <div class="video-showcase">
+                        <video class="showcase-video" controls>
+                            <source src="瞬贴展示/开头.mp4" type="video/mp4">
+                            您的浏览器不支持视频播放
+                        </video>
+                        <div class="video-caption">30秒了解瞬贴</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <div class="demo-container">
+                <div class="demo-video">
+                    <div class="interactive-demo">
+                        <div class="demo-header">
+                            <h3>触发词替换演示</h3>
+                            <p>在输入框中输入 .em ，看看会发生什么</p>
+                        </div>
+                        <div class="demo-input-area">
+                            <label>请输入内容：</label>
+                            <input type="text" id="trigger-demo" class="demo-input" placeholder="输入 .em 试试..." autocomplete="off">
+                        </div>
+                        <div class="demo-hint">
+                            <p>输入 .em 会自动变成 3551742335@qq.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demo-content">
+                    <h2>触发词系统</h2>
+                    <div class="use-cases">
+                        <div class="use-case">
+                            <h4>自定义触发词</h4>
+                            <p>你可以设置任何文本作为触发词，比如 .em、.addr、.tel 等。</p>
+                        </div>
+                        <div class="use-case">
+                            <h4>智能备注</h4>
+                            <p>为每个触发词添加备注说明，方便管理和查找。</p>
+                        </div>
+                        <div class="use-case">
+                            <h4>一键替换</h4>
+                            <p>输入触发词后自动替换为预设内容，告别重复打字。</p>
+                        </div>
+                        <div class="use-case">
+                            <h4>多场景应用</h4>
+                            <p>邮箱、地址、电话、常用短语，所有重复输入都能自动化。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <div class="demo-container">
+                <div class="demo-video">
+                    <div class="video-showcase">
+                        <video class="showcase-video" controls>
+                            <source src="瞬贴展示/贴图片.mp4" type="video/mp4">
+                            您的浏览器不支持视频播放
+                        </video>
+                        <div class="video-caption">图片复制演示</div>
+                    </div>
+                </div>
+                
+                <div class="demo-content">
+                    <h2>谁需要它</h2>
+                    <div class="use-cases">
+                        <div class="use-case">
+                            <h4>程序员</h4>
+                            <p>代码片段、配置信息、API文档，设置触发词一键调用，写代码快一倍。</p>
+                        </div>
+                        <div class="use-case">
+                            <h4>自媒体</h4>
+                            <p>常用话术、素材链接、标签组合，复制一次永久使用，发布效率翻倍。</p>
+                        </div>
+                        <div class="use-case">
+                            <h4>客服/销售</h4>
+                            <p>标准回复、产品介绍、报价单，打几个字就能发，回复速度提升3倍。</p>
+                        </div>
+                        <div class="use-case">
+                            <h4>学生党</h4>
+                            <p>参考文献、常用公式、笔记摘要，写论文再也不用反复翻找。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <div class="demo-container">
+                <div class="demo-video">
+                    <div class="video-showcase">
+                        <video class="showcase-video" controls>
+                            <source src="瞬贴展示/贴文件.mp4" type="video/mp4">
+                            您的浏览器不支持视频播放
+                        </video>
+                        <div class="video-caption">文件管理演示</div>
+                    </div>
+                </div>
+                
+                <div class="demo-content">
+                    <h2>更多玩法</h2>
+                    <div class="use-cases">
+                        <div class="use-case">
+                            <h4>分组管理</h4>
+                            <p>把常用的复制内容分组，工作、生活、学习分开管理，找起来更方便。</p>
+                        </div>
+                        <div class="use-case">
+                            <h4>智能搜索</h4>
+                            <p>不确定原文？没关系，模糊搜索帮你找，输入"设置"能找到"系统设置"。</p>
+                        </div>
+                        <div class="use-case">
+                            <h4>快捷键操作</h4>
+                            <p>所有操作都能用快捷键，手不用离开键盘，效率拉满。</p>
+                        </div>
+                        <div class="use-case">
+                            <h4>历史回溯</h4>
+                            <p>误删了？没关系，历史记录都在，随时找回之前复制的内容。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <div class="demo-container">
+                <div class="demo-video">
+                    <div class="video-showcase">
+                        <video class="showcase-video" controls>
+                            <source src="瞬贴展示/Deepsek贴.mp4" type="video/mp4">
+                            您的浏览器不支持视频播放
+                        </video>
+                        <div class="video-caption">AI集成演示</div>
+                    </div>
+                </div>
+                
+                <div class="demo-content">
+                    <h2>技术亮点</h2>
+                    <div class="use-cases">
+                        <div class="use-case">
+                            <h4>体积超小</h4>
+                            <p>安装包只有几MB，不占内存，启动秒开。</p>
+                        </div>
+                        <div class="use-case">
+                            <h4>数据安全</h4>
+                            <p>所有数据存在你电脑上，不上传云端，隐私完全掌控。</p>
+                        </div>
+                        <div class="use-case">
+                            <h4>AI加持</h4>
+                            <p>可以接入AI，自动整理、分类、生成内容，越用越智能。</p>
+                        </div>
+                        <div class="use-case">
+                            <h4>跨平台</h4>
+                            <p>Windows、Mac都能用，切换电脑数据同步。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tech-section">
+            <div class="tech-container">
+                <h2>为什么选择瞬贴</h2>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <h4>快</h4>
+                        <p>Rust写的内核，响应速度毫秒级，搜1000条记录只要0.1秒。</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4>轻</h4>
+                        <p>不占内存，不卡电脑，后台静默运行，需要时一秒唤出。</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4>安全</h4>
+                        <p>数据本地存储，不联网，不上传，你的隐私只有你知道。</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4>好用</h4>
+                        <p>界面简洁，上手就会，不需要看说明书。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 个人作品展示. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

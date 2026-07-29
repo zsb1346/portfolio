@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebTools AI - 个人作品展示</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">作品集</a>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">首页</a>
+                <a href="webtoolsai.html" class="nav-link active">WebTools AI</a>
+                <a href="shunqie.html" class="nav-link">瞬贴</a>
+                <a href="kuaijie-ai.html" class="nav-link">快捷AI</a>
+            </div>
+            <div class="nav-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="project-hero">
+            <div class="project-hero-content">
+                <div class="project-badge">Agent Runtime</div>
+                <h1 class="project-title">WebTools AI</h1>
+                <p class="project-subtitle">让网页AI也能操作你的电脑</p>
+                <p class="project-description">
+                    网页版AI不能读文件、不能跑命令、不能改代码？WebTools AI解决这个问题。
+                    你只需要复制粘贴，就能让AI帮你读文件、搜代码、跑命令、改程序。
+                    人肉MCP，人肉Agent，人肉Skills。
+                </p>
+            </div>
+        </section>
+
+        <section class="philosophy-section">
+            <div class="philosophy-container">
+                <h2>它是什么</h2>
+                <div class="philosophy-grid">
+                    <div class="philosophy-card">
+                        <div class="philosophy-number">01</div>
+                        <h3>人肉 MCP</h3>
+                        <p>MCP是让AI连接外部工具的协议。我们用人来当这个桥梁，AI说要做什么，你复制执行，结果贴回去，AI继续工作。</p>
+                    </div>
+                    <div class="philosophy-card">
+                        <div class="philosophy-number">02</div>
+                        <h3>人肉 Agent</h3>
+                        <p>Agent就是能自己思考、自己执行任务的AI。我们让网页AI也能这样：它负责想，你负责做，配合完成复杂任务。</p>
+                    </div>
+                    <div class="philosophy-card">
+                        <div class="philosophy-number">03</div>
+                        <h3>人肉 Skills</h3>
+                        <p>20多个专业技能包：看项目、读代码、找bug、改程序、跑测试...需要哪个装哪个，不用全部加载。</p>
+                    </div>
+                </div>
+                <div class="philosophy-quote">
+                    <p>"AI负责想，你负责做，复杂任务也能在网页端完成。"</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <div class="features-container">
+                <div class="feature-content">
+                    <h2>能做什么</h2>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">/</div>
+                            <div class="feature-text">
+                                <h3>看文件</h3>
+                                <p>AI说"帮我看看这个文件"，你复制命令执行，把结果贴回去，AI就能帮你分析代码、找问题。</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">/</div>
+                            <div class="feature-text">
+                                <h3>搜代码</h3>
+                                <p>不知道某个函数在哪？让AI帮你搜，它会告诉你搜什么，你执行后把结果给它，它帮你分析。</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">/</div>
+                            <div class="feature-text">
+                                <h3>跑命令</h3>
+                                <p>需要运行npm build？需要执行git命令？AI告诉你命令，你跑一下，把结果给它，它帮你处理下一步。</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">/</div>
+                            <div class="feature-text">
+                                <h3>改代码</h3>
+                                <p>找到bug了要改？AI会先告诉你它打算怎么改，你同意后它才生成修改方案，你确认后再执行。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-video">
+                    <div class="video-showcase">
+                        <video class="showcase-video" controls>
+                            <source src="webToolsAI/访问文件.mp4" type="video/mp4">
+                            您的浏览器不支持视频播放
+                        </video>
+                        <div class="video-caption">30秒看懂工作流程</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <div class="demo-container">
+                <div class="demo-video">
+                    <div class="video-showcase">
+                        <video class="showcase-video" controls>
+                            <source src="webToolsAI/写层序.mp4" type="video/mp4">
+                            您的浏览器不支持视频播放
+                        </video>
+                        <div class="video-caption">改代码演示</div>
+                    </div>
+                </div>
+                
+                <div class="demo-content">
+                    <h2>使用场景</h2>
+                    <div class="use-cases">
+                        <div class="use-case">
+                            <h4>调试bug</h4>
+                            <p>报错了不知道哪里有问题？让AI帮你读报错信息、找相关代码、分析原因、给出修复方案。</p>
+                        </div>
+                        <div class="use-case">
+                            <h4>理解代码</h4>
+                            <p>接手一个新项目看不懂？让AI帮你读目录、读代码、画架构图，快速理解项目结构。</p>
+                        </div>
+                        <div class="use-case">
+                            <h4>重构代码</h4>
+                            <p>代码写得乱想重构？让AI先读代码，给出重构建议，你确认后再让它生成修改方案。</p>
+                        </div>
+                        <div class="use-case">
+                            <h4>写新功能</h4>
+                            <p>要加新功能但不知道怎么写？让AI先读现有代码，理解架构，再帮你设计和实现。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="workflow-section">
+            <div class="workflow-container">
+                <h2>怎么用</h2>
+                <div class="workflow-steps">
+                    <div class="workflow-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>告诉AI你的任务</h4>
+                            <p>"帮我看看这个项目是做什么的"、"这个报错怎么修"...</p>
+                        </div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>AI告诉你该做什么</h4>
+                            <p>AI会输出一个结构化请求，告诉你执行什么命令、读什么文件。</p>
+                        </div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>你执行并把结果给它</h4>
+                            <p>复制命令到终端执行，把输出结果复制粘贴回给AI。</p>
+                        </div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>AI继续工作</h4>
+                            <p>根据你给的结果，AI继续分析、推理、给出下一步建议。</p>
+                        </div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>循环直到完成</h4>
+                            <p>重复2-4步，直到任务完成。复杂任务也能搞定。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tech-section">
+            <div class="tech-container">
+                <h2>为什么用它</h2>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <h4>网页AI的救星</h4>
+                        <p>网页版AI不能操作文件？用这个，瞬间拥有本地能力。</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4>安全可控</h4>
+                        <p>所有操作你都看得见，AI不会偷偷做危险操作，你有最终决定权。</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4>技能可选</h4>
+                        <p>20多个技能包按需加载，不浪费，简单任务简单处理。</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4>零成本</h4>
+                        <p>不需要安装任何软件，不需要API Key，有浏览器就能用。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <div class="summary-container">
+                <div class="summary-content">
+                    <h2>一句话总结</h2>
+                    <p class="summary-text">
+                        网页AI不能操作文件？WebTools AI让你用复制粘贴就能搞定。
+                        <strong>人肉MCP + 人肉Agent + 人肉Skills，网页端也能跑复杂任务。</strong>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 个人作品展示. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

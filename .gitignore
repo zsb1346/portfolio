@@ -1,0 +1,9 @@
+# OS files
+Thumbs.db
+.DS_Store
+
+# Media files (too large for git)
+视觉作品/
+快捷AI/
+瞬贴展示/
+webToolsAI/

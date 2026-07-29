@@ -1,0 +1,1190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #000000;
+    --secondary-color: #333333;
+    --accent-color: #666666;
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+    --text-secondary: #666666;
+    --border-color: #e5e5e5;
+    --card-bg: #f9f9f9;
+    --hover-bg: #f0f0f0;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    padding: 0.8rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    position: relative;
+    padding: 0.3rem 0;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--primary-color);
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.nav-toggle span {
+    width: 22px;
+    height: 2px;
+    background: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+    
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+    
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 0.5rem 1rem;
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .nav-toggle {
+        display: flex;
+    }
+    
+    .nav-link {
+        padding: 0.8rem 0;
+        font-size: 1rem;
+    }
+}
+
+/* Main Content */
+.main-content {
+    padding-top: 60px;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 5rem 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+    color: var(--primary-color);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+/* Sections */
+.works-section,
+.projects-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.section-header p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+/* Works Grid - Staggered Layout */
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    grid-auto-rows: 200px;
+}
+
+.work-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--card-bg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.work-card:nth-child(1) { grid-row: span 2; }
+.work-card:nth-child(4) { grid-row: span 2; }
+.work-card:nth-child(6) { grid-row: span 2; }
+.work-card:nth-child(8) { grid-row: span 2; }
+
+.video-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.work-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.work-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.work-card:hover .work-info {
+    transform: translateY(0);
+}
+
+.work-info h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.work-info p {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.project-card {
+    padding: 2.5rem;
+    background: var(--card-bg);
+    border-radius: 16px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+.project-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
+}
+
+.project-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.project-link {
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* Footer */
+.footer {
+    padding: 2rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    background: var(--card-bg);
+}
+
+.footer-content p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .works-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .nav-container {
+        padding: 0 1.5rem;
+    }
+    
+    .hero-section {
+        padding: 5rem 1.5rem;
+    }
+    
+    .works-section,
+    .projects-section {
+        padding: 4rem 1.5rem;
+    }
+    
+    .philosophy-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .philosophy-quote {
+        padding: 1.5rem;
+    }
+    
+    .features-container,
+    .demo-container {
+        gap: 3rem;
+    }
+    
+    .workflow-steps {
+        gap: 1rem;
+    }
+    
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 1rem 2rem;
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .nav-toggle {
+        display: flex;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section {
+        padding: 4rem 1.5rem;
+    }
+    
+    .works-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 150px;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .work-card:nth-child(1),
+    .work-card:nth-child(4),
+    .work-card:nth-child(6),
+    .work-card:nth-child(8) {
+        grid-row: span 1;
+    }
+    
+    .project-hero {
+        padding: 6rem 1.5rem 3rem;
+    }
+    
+    .project-title {
+        font-size: 2.5rem;
+    }
+    
+    .project-subtitle {
+        font-size: 1.25rem;
+    }
+    
+    .philosophy-section,
+    .features-section,
+    .demo-section,
+    .workflow-section,
+    .tech-section,
+    .summary-section {
+        padding: 3rem 1.5rem;
+    }
+    
+    .philosophy-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .features-container,
+    .demo-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .feature-content h2,
+    .demo-content h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .use-cases {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .workflow-steps {
+        gap: 0.8rem;
+    }
+    
+    .tech-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .section-header p {
+        font-size: 0.95rem;
+    }
+    
+    .works-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 200px;
+    }
+    
+    .project-title {
+        font-size: 2.2rem;
+    }
+    
+    .project-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .project-description {
+        font-size: 1rem;
+    }
+    
+    .philosophy-container h2,
+    .feature-content h2,
+    .demo-content h2,
+    .workflow-container h2,
+    .tech-container h2 {
+        font-size: 1.8rem;
+    }
+    
+    .philosophy-card {
+        padding: 1.5rem;
+    }
+    
+    .philosophy-number {
+        font-size: 2rem;
+    }
+    
+    .philosophy-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .feature-item {
+        padding: 1rem;
+    }
+    
+    .feature-text h3 {
+        font-size: 1rem;
+    }
+    
+    .feature-text p {
+        font-size: 0.9rem;
+    }
+    
+    .use-case {
+        padding: 1rem;
+    }
+    
+    .use-case h4 {
+        font-size: 0.95rem;
+    }
+    
+    .use-case p {
+        font-size: 0.85rem;
+    }
+    
+    .workflow-step {
+        padding: 1rem;
+    }
+    
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .step-content h4 {
+        font-size: 1rem;
+    }
+    
+    .step-content p {
+        font-size: 0.9rem;
+    }
+    
+    .tech-card {
+        padding: 1.5rem;
+    }
+    
+    .tech-card h4 {
+        font-size: 1.1rem;
+    }
+    
+    .tech-card p {
+        font-size: 0.9rem;
+    }
+    
+    .summary-content {
+        padding: 2rem;
+    }
+    
+    .summary-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .summary-text {
+        font-size: 1rem;
+    }
+    
+    .interactive-demo {
+        padding: 1.5rem;
+    }
+    
+    .demo-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .demo-input,
+    .demo-result {
+        padding: 0.8rem;
+        font-size: 0.95rem;
+    }
+    
+    .showcase-video,
+    .showcase-image {
+        min-height: 180px;
+    }
+    
+    .video-caption {
+        padding: 0.8rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Project Pages Common Styles */
+.project-hero {
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+    background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+}
+
+.project-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.project-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--primary-color);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.project-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+    color: var(--primary-color);
+}
+
+.project-subtitle {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.project-description {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Philosophy Section */
+.philosophy-section {
+    padding: 5rem 2rem;
+    background: var(--card-bg);
+}
+
+.philosophy-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.philosophy-container h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.philosophy-card {
+    padding: 2.5rem;
+    background: white;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.philosophy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.philosophy-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--border-color);
+    margin-bottom: 1rem;
+}
+
+.philosophy-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.philosophy-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.philosophy-quote {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.philosophy-quote p {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--text-color);
+}
+
+/* Features Section for Project Pages */
+.features-section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.features-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.feature-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.feature-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.feature-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.feature-text h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.feature-text p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Video Showcase */
+.video-showcase {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.showcase-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    min-height: 300px;
+    object-fit: contain;
+    background: #000;
+}
+
+.showcase-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    min-height: 300px;
+    object-fit: contain;
+}
+
+.video-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Interactive Demo */
+.interactive-demo {
+    padding: 2rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.demo-header {
+    margin-bottom: 1.5rem;
+}
+
+.demo-header h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.demo-header p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.demo-input-area {
+    margin-bottom: 1rem;
+}
+
+.demo-input-area label,
+.demo-result-area label {
+    display: block;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.demo-input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.demo-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.demo-hint {
+    padding: 0.75rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.demo-hint p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* Demo Section */
+.demo-section {
+    padding: 5rem 2rem;
+    background: var(--card-bg);
+}
+
+.demo-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.demo-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.use-cases {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.use-case {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.use-case:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.use-case h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.use-case p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Workflow Section */
+.workflow-section {
+    padding: 5rem 2rem;
+}
+
+.workflow-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.workflow-container h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+.workflow-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.workflow-step {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.workflow-step:hover {
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.step-number {
+    width: 48px;
+    height: 48px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.step-content h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.step-content p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Tech Section */
+.tech-section {
+    padding: 5rem 2rem;
+    background: var(--card-bg);
+}
+
+.tech-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tech-container h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.tech-card {
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.tech-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.tech-card h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
+}
+
+.tech-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Summary Section */
+.summary-section {
+    padding: 5rem 2rem;
+}
+
+.summary-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.summary-content {
+    text-align: center;
+    padding: 3rem;
+    background: var(--card-bg);
+    border-radius: 16px;
+}
+
+.summary-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.summary-text {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.summary-text strong {
+    color: var(--text-color);
+}
+
+/* Responsive for Project Pages */
+@media (max-width: 1024px) {
+    .features-container,
+    .demo-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .philosophy-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .showcase-video,
+    .showcase-image {
+        min-height: 250px;
+    }
+    
+    .demo-container {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-title {
+        font-size: 2.5rem;
+    }
+    
+    .project-subtitle {
+        font-size: 1.25rem;
+    }
+    
+    .philosophy-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .use-cases {
+        grid-template-columns: 1fr;
+    }
+    
+    .showcase-video,
+    .showcase-image {
+        min-height: 200px;
+    }
+    
+    .interactive-demo {
+        padding: 1.5rem;
+    }
+    
+    .demo-header {
+        margin-bottom: 1rem;
+    }
+    
+    .demo-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .demo-header p {
+        font-size: 0.9rem;
+    }
+    
+    .demo-input-area,
+    .demo-result-area {
+        margin-bottom: 0.8rem;
+    }
+    
+    .demo-input-area label,
+    .demo-result-area label {
+        font-size: 0.85rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .demo-input {
+        padding: 0.8rem;
+        font-size: 0.95rem;
+    }
+    
+    .demo-result {
+        padding: 0.8rem;
+        font-size: 0.95rem;
+        min-height: 40px;
+    }
+    
+    .demo-hint {
+        padding: 0.6rem;
+    }
+    
+    .demo-hint p {
+        font-size: 0.8rem;
+    }
+    
+    .video-showcase {
+        border-radius: 12px;
+    }
+    
+    .video-caption {
+        padding: 0.8rem;
+        font-size: 0.85rem;
+    }
+}
